@@ -6,7 +6,7 @@
 > actually ingested. This file exists to lock the target tone and structure.
 
 **Briefing — Monday 2026-06-29 · 05:30 London · Morning · model: sample**
-**Risk sentiment: RISK-OFF** (score −4: equities −1, crypto −1, DXY +1, JPY +1, gold +1, yields +1)
+**Risk sentiment: RISK-OFF** (score −2; votes are +1 risk-on / −1 risk-off: equities −1, crypto −1, DXY −1, JPY +1, gold −1, yields +1)
 
 ---
 
@@ -63,9 +63,11 @@ yields-up / risk-down rotation rather than a single-headline shock.
   catalyst in snapshot.
 
 ### 8. Risk Sentiment — RISK-OFF
-Deterministic read, score −4. Equities down, crypto down, DXY up, JPY bid, gold
-up, yields up all align to risk-off; the only nuance is gold rising *with* the
-dollar, which reinforces (not contradicts) the haven read. No component dissents.
+Deterministic read, score −2 (votes +1 risk-on / −1 risk-off). Equities (−1),
+crypto (−1), a firmer DXY (−1) and bid gold (−1) all vote risk-off; carry-on
+USD/JPY (+1) and the yields-up growth proxy (+1) lean the other way but do not
+override the net. The nuance worth naming: gold rising *with* the dollar
+reinforces the haven read rather than contradicting it.
 
 ### 9. Economic Calendar (today, ranked)
 1. **14:00 — US Consumer Confidence** (high) — first read on whether the
