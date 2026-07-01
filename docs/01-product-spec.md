@@ -52,9 +52,10 @@ change, not a refactor.
 - REST API + responsive web dashboard to read briefings, asset cards, calendar,
   watchlist, and notes.
 - Persistence of every briefing for day-over-day comparison.
-- Delivery to **at least one** channel (console/log adapter ships by default;
-  email/Telegram/Discord are interfaces with stub adapters pending the
-  operator's channel choice).
+- Delivery via the **interface itself**: the app (dashboard/API) is the surface
+  the operator reads the briefing on (default `in_app` adapter). A `console`
+  adapter exists for dev; email/Telegram/Discord are optional additive push
+  adapters behind the same port, not required for the MVP.
 
 ### Out of scope (placeholders only — see `03-advanced-features.md`)
 - Intraday updates, end-of-day recaps.

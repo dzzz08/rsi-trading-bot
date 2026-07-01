@@ -53,10 +53,13 @@ Phase 1 scope. Anything not listed here is deferred to `03-advanced-features.md`
 - Priority assets, preferred delivery channel, session focus (Asia/London/NY),
   timezone. Single-user default seeded; model is multi-user-ready.
 
-### F9 — Delivery
-- `DeliveryChannel` port. **Console/log** adapter ships and needs no creds.
-- Email / Telegram / Discord adapters are **stubs** pending the operator's
-  channel choice (do not implement all three blindly).
+### F9 — Delivery (the interface *is* the delivery)
+- Delivery is not a push/message. The app (dashboard/API) is the surface the
+  operator reads the briefing on, so the default `DeliveryChannel` is **`in_app`**:
+  the pipeline persists the briefing and it becomes available in the dashboard.
+- A `console` adapter exists as a dev convenience (prints the rendered note).
+- Email / Telegram / Discord are **optional additive adapters** behind the same
+  port — a *push* on top of the interface, not required for the MVP.
 
 ### F10 — REST API
 - Typed endpoints for briefings, assets, calendar, watchlist, notes,

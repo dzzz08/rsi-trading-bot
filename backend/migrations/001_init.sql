@@ -17,7 +17,7 @@ CREATE TABLE user_preferences (
   user_id          UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   timezone         TEXT NOT NULL DEFAULT 'Europe/London',
   session_focus    TEXT NOT NULL DEFAULT 'London',
-  delivery_channel TEXT NOT NULL DEFAULT 'console',
+  delivery_channel TEXT NOT NULL DEFAULT 'in_app',
   priority_assets  JSONB NOT NULL DEFAULT '[]'::jsonb,
   updated_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
   UNIQUE (user_id)

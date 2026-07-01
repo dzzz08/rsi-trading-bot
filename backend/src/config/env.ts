@@ -15,7 +15,9 @@ const schema = z.object({
   DATA_SOURCE: z.enum(['mock', 'real']).default('mock'),
   LLM_PROVIDER: z.enum(['mock', 'anthropic']).default('mock'),
   PERSISTENCE: z.enum(['memory', 'postgres']).default('memory'),
-  DELIVERY_CHANNEL: z.enum(['console', 'email', 'telegram', 'discord']).default('console'),
+  // Primary delivery is the app itself (dashboard/API). Messaging channels are
+  // optional additive adapters, not the default.
+  DELIVERY_CHANNEL: z.enum(['in_app', 'console', 'email', 'telegram', 'discord']).default('in_app'),
 
   // LLM
   ANTHROPIC_API_KEY: z.string().optional(),

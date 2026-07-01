@@ -32,6 +32,7 @@ import {
   DEFAULT_USER,
   InMemoryUserRepository,
 } from '../infrastructure/persistence/InMemoryUserRepository.js';
+import { InAppDeliveryChannel } from '../infrastructure/delivery/InAppDeliveryChannel.js';
 import { ConsoleDeliveryChannel } from '../infrastructure/delivery/ConsoleDeliveryChannel.js';
 import {
   DiscordDeliveryChannel,
@@ -125,14 +126,16 @@ export function buildContainer(config: AppConfig): Container {
 
 function pickDelivery(channel: AppConfig['DELIVERY_CHANNEL']): DeliveryChannel {
   switch (channel) {
+    case 'console': // dev convenience: print the rendered briefing
+      return new ConsoleDeliveryChannel();
     case 'email':
       return new EmailDeliveryChannel();
     case 'telegram':
       return new TelegramDeliveryChannel();
     case 'discord':
       return new DiscordDeliveryChannel();
-    case 'console':
-    default:
-      return new ConsoleDeliveryChannel();
+    case 'in_app':
+    default: // the app itself is the delivery surface
+      return new InAppDeliveryChannel((msg) => console.log(msg));
   }
 }

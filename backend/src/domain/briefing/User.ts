@@ -9,7 +9,7 @@ export interface User {
 }
 
 export type SessionFocus = 'Asia' | 'London' | 'NewYork';
-export type DeliveryChannelName = 'console' | 'email' | 'telegram' | 'discord';
+export type DeliveryChannelName = 'in_app' | 'console' | 'email' | 'telegram' | 'discord';
 
 export interface UserPreferences {
   readonly userId: string;

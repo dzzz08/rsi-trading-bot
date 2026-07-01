@@ -26,7 +26,7 @@ export class InMemoryUserRepository implements UserRepository {
       userId: user.id,
       timezone: 'Europe/London',
       sessionFocus: 'London',
-      deliveryChannel: 'console',
+      deliveryChannel: 'in_app',
       priorityAssets: ['XAUUSD', 'NAS100'],
       updatedAt: new Date().toISOString(),
     });

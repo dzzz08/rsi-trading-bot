@@ -76,7 +76,8 @@ cadences (intraday/EOD) by swapping the composition template.
                                             │
                 ┌───────────────────────────▼───────────────────────────┐
    STAGE 9      │  DELIVER  (DeliveryChannel port)                       │
-   deliver      │  Console adapter (default) / email|telegram|discord    │
+   deliver      │  in_app (default: available in dashboard/API) /        │
+                │  console (dev) / optional email|telegram|discord push  │
                 │  record a `deliveries` row per attempt                 │
                 └───────────────────────────┬───────────────────────────┘
                                             │

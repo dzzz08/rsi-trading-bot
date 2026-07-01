@@ -93,7 +93,10 @@ since they only bite when wiring real data:
 - **LLM:** Anthropic Claude (`claude-sonnet-4-6` default, `claude-opus-4-8`
   optional) behind a port; a deterministic mock analyst runs the offline demo.
 - **Persistence:** in-memory for the demo; Postgres adapter + migration ready.
-- **Delivery:** console adapter ships; email/Telegram/Discord are stubs.
+- **Delivery = the interface.** The app (dashboard/API) is the delivery surface;
+  the default `in_app` adapter just makes the persisted briefing available to
+  read. Messaging channels (email/Telegram/Discord) are optional additive
+  adapters, not a required push — and not the headline decision.
 
 ## Open questions for the operator (before Step 3 — wiring real data)
 
@@ -103,9 +106,12 @@ mocked MVP:
 1. **LLM key** — confirm the `ANTHROPIC_API_KEY` to use, and Sonnet vs Opus.
 2. **Data providers** — confirm which free/trial tiers to start with
    (Twelve Data + Marketaux + Trading Economics/FRED are the proposed lean).
-3. **Delivery channel** — which ONE to build first: email, Telegram, or Discord.
-4. **Hosting/scheduling** — in-process cron vs external (GitHub Actions /
+3. **Hosting/scheduling** — in-process cron vs external (GitHub Actions /
    platform) hitting the generate endpoint.
+
+(Delivery is settled: the app/dashboard is the interface — no messaging channel
+is required. Email/Telegram/Discord remain optional adapters if you ever want a
+push as well.)
 
 ## Status
 

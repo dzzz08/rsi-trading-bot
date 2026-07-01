@@ -259,7 +259,7 @@ export function registerRoutes(app: Express, c: Container): void {
         .object({
           timezone: z.string(),
           sessionFocus: z.enum(['Asia', 'London', 'NewYork']),
-          deliveryChannel: z.enum(['console', 'email', 'telegram', 'discord']),
+          deliveryChannel: z.enum(['in_app', 'console', 'email', 'telegram', 'discord']),
           priorityAssets: z.array(z.string()),
         })
         .safeParse(req.body);
